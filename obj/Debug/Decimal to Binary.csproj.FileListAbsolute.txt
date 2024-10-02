@@ -1,0 +1,7 @@
+C:\Users\anore\source\repos\Decimal to Binary\Decimal to Binary\bin\Debug\Decimal to Binary.exe.config
+C:\Users\anore\source\repos\Decimal to Binary\Decimal to Binary\bin\Debug\Decimal to Binary.exe
+C:\Users\anore\source\repos\Decimal to Binary\Decimal to Binary\bin\Debug\Decimal to Binary.pdb
+C:\Users\anore\source\repos\Decimal to Binary\Decimal to Binary\obj\Debug\Decimal to Binary.csproj.AssemblyReference.cache
+C:\Users\anore\source\repos\Decimal to Binary\Decimal to Binary\obj\Debug\Decimal to Binary.csproj.CoreCompileInputs.cache
+C:\Users\anore\source\repos\Decimal to Binary\Decimal to Binary\obj\Debug\Decimal to Binary.exe
+C:\Users\anore\source\repos\Decimal to Binary\Decimal to Binary\obj\Debug\Decimal to Binary.pdb
