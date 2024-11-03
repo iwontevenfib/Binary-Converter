@@ -14,31 +14,50 @@ namespace Decimal_to_Binary
         static void Main(string[] args)
         {
 
-          // Main
+            // Main
 
-            string optionTest;
+            mainOption();
 
-            Console.WriteLine("\t\t\t\tWelcome to the Lanes!");
-            Console.Write("\nWhat do you want to convert? type (1) 'Binary To Decimal' | (2) 'Decimal to Binary': ");
-            optionTest = Console.ReadLine();
-
-            if (optionTest == "1")
-            {
-                binaryToDecimal();
-                optionHandler = false;
-            }
-            else if (optionTest == "2")
-            {
-                decimalToBinary();
-                optionHandler = true;
-            }
 
 
 
 
         }
 
-       // BINARY TO DECIMAL
+        static void mainOption()
+        {
+            string optionTest;
+
+            Console.WriteLine("\n\t\t\t\tWelcome to the Lanes!");
+            Console.WriteLine("\nWhat do you want to convert?");
+            Console.WriteLine("Note: only type from 1-3 for option");
+            Console.WriteLine("\n(1) 'Binary To Decimal'");
+            Console.WriteLine("(2) 'Decimal to Binary'");
+            Console.WriteLine("(3) 'Exit'");
+            optionTest = Console.ReadLine();
+
+            Console.Clear();
+
+            if (optionTest == "1")
+            {
+                optionHandler = false;
+                binaryToDecimal();
+               
+            }
+            else if (optionTest == "2")
+            {
+                optionHandler = true;
+                decimalToBinary();
+                
+            }
+            else if (optionTest == "3")
+            {
+                Console.ReadKey();
+                Console.WriteLine("Press any key to exit....");
+            }
+        }
+
+        // BINARY TO DECIMAL
 
         static void binaryToDecimal()
         {
@@ -48,14 +67,26 @@ namespace Decimal_to_Binary
             string myNum;
             int power = -1;
 
-            Console.WriteLine("\nNote: Binary is only 1's and 0's.");
-            Console.Write("Enter the binary number you want to convert to decimal: ");
+            
+            Console.Write("\n\nEnter the binary number you want to convert to decimal: ");
 
             myNum = Console.ReadLine();
+            string checkpoint = myNum;
+            bool myCheckpoint = checkpoint.Any(tsek => "23456789".Contains(tsek));
 
             double myDecimal = 0;
 
+           if (myCheckpoint)
+            {
+                Console.Clear();
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("\nYou have entered an invalid binary!");
+                Console.ResetColor();
 
+                Console.WriteLine("\nNote: binary only contains 1s and 0s.");
+                binaryToDecimal();
+            }
 
 
             for (int i = myNum.Length - 1; i >= 0; i--)
@@ -76,7 +107,7 @@ namespace Decimal_to_Binary
             }
 
             // OUTPUT
-
+            Console.Clear();
             Console.WriteLine("The decimal number is: {0}", myDecimal);
 
             // New Session
@@ -130,7 +161,7 @@ namespace Decimal_to_Binary
 
             if (optionHandler)
             {
-                Console.Write("\n\n\n\nDo you want to convert another number?  Type 'Y' if yes ");
+                Console.Write("\n\nDo you want to convert another number?  Type 'Y' if yes ");
                 string yes = Console.ReadLine();
                 bool loopsy = true;
 
@@ -139,12 +170,15 @@ namespace Decimal_to_Binary
 
                     if (yes == "y" || yes == "Y")
                     {
+                        Console.Clear();
                         decimalToBinary();
                         loopsy = false;
                     }
                     else
                     {
+                        Console.Clear();
                         loopsy = false;
+                        mainOption();
                     }
                 }
 
@@ -162,12 +196,15 @@ namespace Decimal_to_Binary
 
                     if (yes == "y" || yes == "Y")
                     {
+                        Console.Clear();
                         binaryToDecimal();
                         loopsy = false;
                     }
                     else
                     {
+                        Console.Clear();
                         loopsy = false;
+                        mainOption();
                     }
                 }
 
